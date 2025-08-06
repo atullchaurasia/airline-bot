@@ -1,0 +1,21 @@
+version: 1
+memory: true
+session: true
+state: true
+
+tools:
+  - name: search_flights
+    path: tools.flight_search:search_flights
+  - name: book_flight
+    path: tools.flight_booking:book_flight
+  - name: get_flight_status
+    path: tools.flight_status:get_flight_status
+  - name: get_baggage_policy
+    path: tools.baggage_info:get_baggage_policy
+  - name: manage_booking_api
+    path: tools.manage_booking:manage_booking_api
+  - name: faq_retriever
+    path: tools.faq_retriever_tool:retrieve_faq_answer
+  - name: search_live_flights
+    path: tools.flight_search:search_live_flights
+ 

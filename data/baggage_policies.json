@@ -1,0 +1,92 @@
+{
+  "air india": {
+    "cabin_baggage": "1 bag up to 7kg",
+    "check_in_baggage": "1 bag up to 25kg",
+    "extra_baggage_fee": "₹500 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "2 bags up to 23kg each",
+    "special_items": "Sports equipment allowed with handling fee"
+  },
+  "IndiGo": {
+    "cabin_baggage": "1 bag up to 7kg",
+    "check_in_baggage": "1 bag up to 15kg",
+    "extra_baggage_fee": "₹550 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "Varies by route (usually 20-30kg)",
+    "special_items": "Bicycles and musical instruments allowed with packing"
+  },
+  "vistara": {
+    "cabin_baggage": "1 bag up to 7kg + 1 laptop bag",
+    "check_in_baggage": "1 bag up to 20kg",
+    "extra_baggage_fee": "₹525 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "2 bags up to 23kg each in economy",
+    "special_items": "Sports and medical equipment allowed with prior intimation"
+  },
+  "spicejet": {
+    "cabin_baggage": "1 bag up to 7kg",
+    "check_in_baggage": "1 bag up to 15kg",
+    "extra_baggage_fee": "₹600 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "20kg standard; varies by fare",
+    "special_items": "Sports and medical items allowed with prior approval"
+  },
+  "go first": {
+    "cabin_baggage": "1 bag up to 7kg",
+    "check_in_baggage": "1 bag up to 15kg",
+    "extra_baggage_fee": "₹550 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "Usually 20kg-30kg depending on route",
+    "special_items": "Contact airline for excess/special luggage"
+  },
+  "air asia india": {
+    "cabin_baggage": "1 bag up to 7kg",
+    "check_in_baggage": "1 bag up to 15kg (may vary by fare)",
+    "extra_baggage_fee": "₹450–₹600 per kg over limit",
+    "number_of_checked_bags": "1",
+    "max_dimensions_checked_bag": "158 cm (L+W+H)",
+    "international_baggage": "Typically 20kg or 25kg",
+    "special_items": "Sports gear allowed as add-on luggage"
+  },
+  "emirates": {
+    "cabin_baggage": "1 bag up to 7kg (Economy), 2 bags for Business",
+    "check_in_baggage": "1-2 bags, up to 30kg (Economy)",
+    "extra_baggage_fee": "USD 30–50 per kg (route-dependent)",
+    "number_of_checked_bags": "2",
+    "max_dimensions_checked_bag": "150–300 cm depending on class",
+    "international_baggage": "2 bags up to 23kg (Economy)",
+    "special_items": "Permits musical instruments, sports items, wheelchairs"
+  },
+  "qatar airways": {
+    "cabin_baggage": "1 bag up to 7kg (Economy)",
+    "check_in_baggage": "2 bags up to 23kg each (Economy)",
+    "extra_baggage_fee": "USD 20–40 per kg",
+    "number_of_checked_bags": "2",
+    "max_dimensions_checked_bag": "158 cm",
+    "international_baggage": "Standard for international: 46kg (2x23kg)",
+    "special_items": "Allowed upon pre-approval; fees may apply"
+  },
+  "lufthansa": {
+    "cabin_baggage": "1 bag up to 8kg",
+    "check_in_baggage": "1 bag up to 23kg (Economy)",
+    "extra_baggage_fee": "€50–€200 depending on zone",
+    "number_of_checked_bags": "1 or 2 depending on fare",
+    "max_dimensions_checked_bag": "158 cm",
+    "international_baggage": "2 bags up to 23kg for long-haul economy",
+    "special_items": "Sporting and medical items allowed with conditions"
+  },
+  "british airways": {
+    "cabin_baggage": "1 cabin bag + 1 personal item (max 23kg total)",
+    "check_in_baggage": "1 bag up to 23kg (Economy)",
+    "extra_baggage_fee": "£65–£120 per bag depending on route",
+    "number_of_checked_bags": "1–2 depending on fare",
+    "max_dimensions_checked_bag": "90 x 75 x 43 cm",
+    "international_baggage": "Up to 2 bags (23kg each) in most international routes",
+    "special_items": "Musical instruments and sports gear allowed if registered"
+  }
+}

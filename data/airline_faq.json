@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is the refund policy?",
+    "answer": "Refunds depend on the ticket type. Refundable tickets are refunded to the original payment method. Non-refundable tickets may incur a cancellation fee."
+  },
+  {
+    "question": "When should I arrive at the airport?",
+    "answer": "We recommend arriving at least 2 hours before domestic and 3 hours before international flights."
+  },
+  {
+    "question": "Can I check in online?",
+    "answer": "Yes, online check-in is available 24 to 48 hours before departure through our website or app."
+  }
+]

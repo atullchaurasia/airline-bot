@@ -1,0 +1,9 @@
+google-adk
+pinecone
+requests
+pandas
+fastapi
+uvicorn
+rich
+python-dotenv
+python-multipart
