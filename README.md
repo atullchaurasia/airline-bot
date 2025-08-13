@@ -21,7 +21,7 @@ The system uses a **Manager → Sub-Agent** structure:
 
 ### 1️⃣ **Root Manager Agent**
 
-* **File:** `root_agent.py`
+* **File:** `multi_agent/manager/agent.py`
 * **Role:** Routes user queries to the correct sub-agent.
 * **Logic:**
 
@@ -46,7 +46,7 @@ The system uses a **Manager → Sub-Agent** structure:
 
 ### 1. **Intent Identifier Agent**
 
-* **File:** `intent_identifier.py`
+* **Folder:** `multi_agent/manager/sub_agents/intent_identifier`
 * **Role:** Classifies user queries into **6 predefined intents**:
 
   * `flight_booking`
@@ -55,76 +55,48 @@ The system uses a **Manager → Sub-Agent** structure:
   * `baggage_info`
   * `manage_booking`
   * `general_faq`
-* **Special case:** Detects greetings and responds politely.
 
 ---
 
 ### 2. **Flight Search Agent**
 
-* **File:** `flight_search_agent.py`
-* **Tool:** `search_live_flights()`
+* **Folder:** `multi_agent/manager/sub_agents/flight_search`
+* **Tool:** `tools/flight_search.py`
 * **API:** [AviationStack](https://aviationstack.com/)
 * **Function:** Finds **live flights** between two IATA airport codes.
-
-**Example Output:**
-
-```
-✈️ Flights from DEL to BOM
-1. Air India AI101 — Dep: 14:00, Arr: 16:30 — Status: On Time
-2. IndiGo 6E202 — Dep: 18:10, Arr: 20:20 — Status: Scheduled
-```
 
 ---
 
 ### 3. **Flight Status Agent**
 
-* **File:** `flight_status_agent.py`
-* **Tool:** `get_flight_status()`
+* **Folder:** `multi_agent/manager/sub_agents/status`
+* **Tool:** `tools/flight_status.py`
 * **API:** AviationStack
 * **Function:** Gets **real-time flight status** by flight number.
-
-**Example Output:**
-
-```
-📡 Flight AI202 Status (2025-08-01)
-- Departure: 14:30
-- Arrival: 17:05
-- Terminal: 3
-- Gate: 12
-- Status: On Time
-```
 
 ---
 
 ### 4. **Manage Booking Agent**
 
-* **File:** `manage_booking_agent.py`
-* **Tool:** `manage_booking_api()`
-* **Function:**
-
-  * Cancel a booking (returns refund details)
-  * Modify booking (updates seat assignment)
-
-**Booking ID format:** `TK123456`
+* **Folder:** `multi_agent/manager/sub_agents/manage_booking`
+* **Tool:** `tools/manage_booking.py`
+* **Function:** Cancel or modify bookings.
 
 ---
 
 ### 5. **FAQ Agent**
 
-* **File:** `faq_agent.py`
-* **Tool:** `retrieve_faq_answer()`
-* **Function:**
-
-  * Answers from a **local JSON FAQ database** using fuzzy matching.
-  * Handles policies like check-in, refunds, cancellations, baggage rules.
+* **Folder:** `multi_agent/manager/sub_agents/faq_retriever`
+* **Tool:** `tools/faq_retriever_tool.py`
+* **Function:** Search **local JSON FAQ** with fuzzy matching.
 
 ---
 
 ### 6. **Baggage Info Agent**
 
-* **File:** `baggage_info_agent.py`
-* **Tool:** `get_baggage_policy()`
-* **Function:** Returns baggage allowance, extra baggage charges, etc.
+* **Folder:** `multi_agent/manager/sub_agents/baggage`
+* **Tool:** `tools/baggage_info.py`
+* **Function:** Returns baggage allowance & extra charges.
 
 ---
 
@@ -143,28 +115,41 @@ The system uses a **Manager → Sub-Agent** structure:
 ## 📂 Project Structure
 
 ```
-airline_assistant/
-│── sub_agents/
-│   ├── intent_identifier/
-│   ├── flight_search/
-│   ├── flight_status/
-│   ├── baggage/
-│   ├── booking/
-│   ├── manage_booking/
-│   ├── faq_retriever/
-│
-│── tools/
-│   ├── flight_search.py
-│   ├── flight_status.py
-│   ├── manage_booking.py
-│   ├── faq_retriever_tool.py
-│   ├── baggage_info.py
-│
+AIRLINE_BOT/
 │── data/
 │   ├── airline_faq.json
 │
-│── root_agent.py
-│── README.md
+│── env/
+│   ├── .env
+│
+│── mcp_config/
+│   ├── mcp.yaml
+│
+│── multi_agent/
+│   ├── manager/
+│       ├── __init__.py
+│       ├── agent.py
+│       ├── app.py
+│       ├── sub_agents/
+│           ├── baggage/
+│           ├── booking/
+│           ├── faq_retriever/
+│           ├── flight_search/
+│           ├── intent_identifier/
+│           ├── manage_booking/
+│           ├── status/
+│
+│── tools/
+│   ├── baggage_info.py
+│   ├── faq_retriever_tool.py
+│   ├── flight_booking.py
+│   ├── flight_search.py
+│   ├── flight_status.py
+│   ├── manage_booking.py
+│
+│── airline_bot.db
+│── app.py
+│── requirements.txt
 │── .env
 ```
 
@@ -175,8 +160,8 @@ airline_assistant/
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/airline-assistant.git
-cd airline-assistant
+git clone https://github.com/yourusername/airline-bot.git
+cd airline-bot
 ```
 
 2. **Install dependencies**
@@ -192,21 +177,19 @@ pip install -r requirements.txt
 AVIATIONSTACK_API_KEY=your_api_key_here
 ```
 
-4. **Run the system**
+4. **Run the bot**
 
 ```bash
-python run.py
+python multi_agent/manager/app.py
 ```
 
 ---
 
-## 🚀 Features Demo
-
-**Example conversation:**
+## 🚀 Example Usage
 
 ```
 User: What's my baggage allowance?
-→ FAQ Agent → "You are allowed 15kg check-in and 7kg cabin baggage."
+→ Baggage Agent → "You are allowed 15kg check-in and 7kg cabin baggage."
 
 User: Search flights from DEL to BLR
 → Flight Search Agent → Shows top 5 live flights.
@@ -216,3 +199,5 @@ User: Cancel my booking TK123456
 ```
 
 ---
+
+I can also make you a **flow diagram** showing how `root_agent` delegates to sub-agents and how tools are called. That would be a strong addition for interviews.
