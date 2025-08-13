@@ -199,5 +199,3 @@ User: Cancel my booking TK123456
 ```
 
 ---
-
-I can also make you a **flow diagram** showing how `root_agent` delegates to sub-agents and how tools are called. That would be a strong addition for interviews.
